@@ -1,3 +1,48 @@
-.test{
-    color:green;
+body{
+    font-size:12px;
+    font-weight:normal;
+}
+
+.title
+{font-size: 25px;
+text-align: center;}
+
+.amount{
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.offerText{
+    @extend body;
+}
+
+.desc{
+    color : #8b0000;
+}
+
+.quantity{
+    border-style: solid;
+    border-color : #D3D3D3;
+    height: 34px;
+}
+
+.rounded{
+    border: none;
+    border-radius: 50%;
+}
+
+.colWhite{
+    color:#ffffff;
+}
+
+.floatRight{
+    float:right;
+}
+
+.selectedQuantity{
+padding: 2px;
+}
+
+.paddingTop5{
+padding-top:5px;
 }

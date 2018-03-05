@@ -1,127 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1520215234236" clover="3.2.0">
-  <project timestamp="1520215234236" name="All files">
-    <metrics statements="66" coveredstatements="53" conditionals="16" coveredconditionals="15" methods="16" coveredmethods="11" elements="98" coveredelements="79" complexity="0" loc="66" ncloc="66" packages="7" files="11" classes="11">
-      <package name="myRetail">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="container.js" path="C:\Users\rakes\Desktop\myRetail\container.js">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-        </file>
-        <file name="empty-module.js" path="C:\Users\rakes\Desktop\myRetail\empty-module.js">
-          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="3" type="stmt"/>
-        </file>
-      </package>
-      <package name="myRetail.src.actions">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <file name="types.js" path="C:\Users\rakes\Desktop\myRetail\src\actions\types.js">
-          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="5" type="stmt"/>
-        </file>
-      </package>
-      <package name="myRetail.src.actions.item">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="index.js" path="C:\Users\rakes\Desktop\myRetail\src\actions\item\index.js">
-          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="3" type="stmt"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="myRetail.src.components">
-        <metrics statements="34" coveredstatements="33" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="6"/>
-        <file name="carousel.js" path="C:\Users\rakes\Desktop\myRetail\src\components\carousel.js">
-          <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-          <line num="5" count="3" type="stmt"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="8" count="1" type="stmt"/>
-          <line num="9" count="1" type="stmt"/>
-          <line num="15" count="0" type="stmt"/>
-          <line num="20" count="3" type="stmt"/>
-          <line num="25" count="3" type="stmt"/>
-        </file>
-        <file name="productHighlights.js" path="C:\Users\rakes\Desktop\myRetail\src\components\productHighlights.js">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="4" count="3" type="stmt"/>
-          <line num="5" count="2" type="stmt"/>
-          <line num="6" count="2" type="stmt"/>
-          <line num="11" count="2" type="stmt"/>
-          <line num="18" count="3" type="stmt"/>
-          <line num="22" count="3" type="stmt"/>
-        </file>
-        <file name="promotion.js" path="C:\Users\rakes\Desktop\myRetail\src\components\promotion.js">
-          <metrics statements="16" coveredstatements="16" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
-          <line num="4" count="3" type="stmt"/>
-          <line num="6" count="8" type="stmt"/>
-          <line num="7" count="8" type="stmt"/>
-          <line num="8" count="8" type="stmt"/>
-          <line num="9" count="8" type="stmt"/>
-          <line num="10" count="8" type="stmt"/>
-          <line num="11" count="8" type="stmt"/>
-          <line num="12" count="8" type="cond" truecount="4" falsecount="0"/>
-          <line num="13" count="1" type="stmt"/>
-          <line num="14" count="1" type="stmt"/>
-          <line num="15" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="19" count="8" type="stmt"/>
-          <line num="23" count="1" type="stmt"/>
-          <line num="57" count="3" type="stmt"/>
-          <line num="63" count="3" type="stmt"/>
-        </file>
-        <file name="rating.js" path="C:\Users\rakes\Desktop\myRetail\src\components\rating.js">
-          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="4" count="3" type="stmt"/>
-          <line num="14" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="myRetail.src.containers">
-        <metrics statements="21" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="2"/>
-        <file name="Retail.jsx" path="C:\Users\rakes\Desktop\myRetail\src\containers\Retail.jsx">
-          <metrics statements="21" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="2"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="17" count="0" type="stmt"/>
-          <line num="20" count="1" type="stmt"/>
-          <line num="21" count="1" type="stmt"/>
-          <line num="22" count="1" type="cond" truecount="3" falsecount="1"/>
-          <line num="24" count="0" type="stmt"/>
-          <line num="25" count="0" type="stmt"/>
-          <line num="30" count="0" type="stmt"/>
-          <line num="31" count="0" type="stmt"/>
-          <line num="40" count="0" type="stmt"/>
-          <line num="41" count="0" type="stmt"/>
-          <line num="42" count="0" type="stmt"/>
-          <line num="43" count="0" type="stmt"/>
-          <line num="47" count="1" type="stmt"/>
-          <line num="67" count="2" type="stmt"/>
-          <line num="73" count="2" type="stmt"/>
-          <line num="79" count="2" type="stmt"/>
-          <line num="80" count="0" type="stmt"/>
-          <line num="82" count="0" type="stmt"/>
-          <line num="87" count="2" type="stmt"/>
-          <line num="88" count="0" type="stmt"/>
-        </file>
-      </package>
-      <package name="myRetail.src.reducers">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <file name="index.js" path="C:\Users\rakes\Desktop\myRetail\src\reducers\index.js">
-          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="4" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="myRetail.src.reducers.item">
-        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <file name="index.js" path="C:\Users\rakes\Desktop\myRetail\src\reducers\item\index.js">
-          <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-          <line num="4" count="5" type="cond" truecount="1" falsecount="0"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="8" count="4" type="stmt"/>
-        </file>
-      </package>
+<coverage generated="1520235004385" clover="3.2.0">
+  <project timestamp="1520235004385" name="All files">
+    <metrics statements="28" coveredstatements="28" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5" elements="43" coveredelements="43" complexity="0" loc="28" ncloc="28" packages="1" files="3" classes="3">
+      <file name="productHighlights.js" path="C:\Users\rakes\Desktop\myRetail\src\components\productHighlights.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+      <file name="promotion.js" path="C:\Users\rakes\Desktop\myRetail\src\components\promotion.js">
+        <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+      </file>
+      <file name="rating.js" path="C:\Users\rakes\Desktop\myRetail\src\components\rating.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
     </metrics>
   </project>
 </coverage>

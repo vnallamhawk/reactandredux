@@ -20,13 +20,11 @@ module.exports = {
           }
       },
       {
-
-        test: /\.scss/,
-        loader: 'css-loader!sass-loader?outputStyle=compressed!postcss-loader'
-
-    },
+        test: /\.scss$/,
+        loader: 'style!css!resolve-url!sass?sourceMap'
+      },
     { test: /\.json$/, loader: 'json-loader' }
-      ],
+      ]
   },
     resolve: {
       extensions: ['', '.js', '.jsx','.json']

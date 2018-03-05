@@ -11,6 +11,7 @@ const Promotion =(props) => {
     let i=0;
     if(undefined!=promotion && promotion!=""){
     while(i<promotion.length){
+        console.log("test");
         let j=0;
         promotionDescription.push(promotion[i].Description[j].shortDescription);
         i++;
@@ -18,16 +19,35 @@ const Promotion =(props) => {
 }
     return(
         <div>
-            {amount}
+            <div>
+            <div className="amount">
+                        {amount}
+                        <sub className="offerText">online price</sub>
+                        </div> 
+                        </div>
+                        <hr/>
             {promotionDescription.map(function(content,index){
-                return (<div className="desc" key={"descrip"+index}> {content} </div>);
+                return (<div className="desc" key={"descrip"+index}> <span className="glyphicon glyphicon-tag">{content}</span> </div>);
             })}
+               <hr/>
+
+               {/* <span className="glyphicon glyphicon-tag"></span> */}
             <div className="row">
             <div className="col-md-5">
-            <span> Quantity</span>
-            <span className="glyphicon glyphicon-minus"></span>
-            1
-            <span className="glyphicon glyphicon-plus"></span>
+            <div className="col-md-12 quantity">
+            <div className="paddingTop5"> 
+            <span> quantity</span>
+            <span className="floatRight">
+            <button className="button rounded">
+            <span className="colWhite glyphicon glyphicon-minus"></span>
+            </button>
+            <span className="selectedQuantity"> 1 </span>
+            <button className="button rounded">
+            <span className="colWhite glyphicon glyphicon-plus"></span>
+            </button>
+            </span>
+            </div>
+            </div>
             </div>
             </div>
             <div className="row">

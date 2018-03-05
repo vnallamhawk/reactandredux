@@ -1,5 +1,4 @@
 import React from 'react';
-import {shallow,mount} from 'enzyme';
 
 const ProductHighlights = props =>{
    let highlights = props.highlights;

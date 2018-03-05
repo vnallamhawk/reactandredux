@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import 'style!css!react-responsive-carousel/lib/styles/carousel.css';
+import '../../public/style/style.scss';
 
 const Image =(props)=> {
     console.log(props);
@@ -8,13 +9,16 @@ const Image =(props)=> {
     let images = props.images;
     return(
         <div>
+          <div className="title">
             {title}
-            <Carousel showArrows={true}>
+            </div>
+            <div className="carouselImage">
+            <Carousel axis="horizontal" showArrows={true}>
      {images.map(function(key,index){
-
-return (<div> <img src={key.image}/> </div>);
+return (<div key={index}> <img src={key.image}/> </div>);
      })}
       </Carousel>
+      </div>
      </div>);
 };
 Image.defaultProps = {

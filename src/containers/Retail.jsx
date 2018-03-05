@@ -28,12 +28,12 @@ class Retail extends Component{
             purchasingChannelCode:items[0].purchasingChannelCode };
 
                 debugger;
-        let rating={overallRating: items[0].CustomerReview[0].overallRating,
-            overallReview: items[0].CustomerReview[0].totalReviews,
-            proReview: items[0].CustomerReview[0].Pro[0].overallRating,
+        let rating={overallRating: items[0].CustomerReview[0].consolidatedOverallRating,
+            overallReview: Number(items[0].CustomerReview[0].totalReviews),
+            proReview: Number(items[0].CustomerReview[0].Pro[0].overallRating),
             proDesc: items[0].CustomerReview[0].Pro[0].review,
             proTitle: items[0].CustomerReview[0].Pro[0].title,
-            conReview: items[0].CustomerReview[0].Con[0].overallRating,
+            conReview: Number(items[0].CustomerReview[0].Con[0].overallRating),
             conDesc: items[0].CustomerReview[0].Con[0].review,
             conTitle: items[0].CustomerReview[0].Con[0].title};
 
