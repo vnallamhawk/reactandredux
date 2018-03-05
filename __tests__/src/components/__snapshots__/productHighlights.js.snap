@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Highlights Test -- Snapshot capturing snapshot of Product Hightlight 1`] = `
+<div>
+  <h2>
+     Product highlights
+  </h2>
+  <ul>
+    
+  </ul>
+</div>
+`;

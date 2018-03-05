@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating Test -- Snapshot capturing snapshot of Rating 1`] = `
+<div>
+  <div>
+    <ReactStars
+      char="★"
+      color1="gray"
+      color2="#ffd700"
+      count={5}
+      edit={true}
+      half={true}
+      onChange={[Function]}
+      size={15}
+      value={0}
+    />
+    <div>
+       View all 
+       reviews  
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-6"
+    >
+      <h3>
+         PRO 
+      </h3>
+      <ReactStars
+        char="★"
+        color1="gray"
+        color2="#ffd700"
+        count={5}
+        edit={true}
+        half={true}
+        onChange={[Function]}
+        size={15}
+        value={0}
+      />
+      <strong>
+         
+         
+      </strong>
+      <p>
+         
+         
+      </p>
+    </div>
+    <div
+      className="col-md-6"
+    >
+      <h3>
+         CON 
+      </h3>
+      <ReactStars
+        char="★"
+        color1="gray"
+        color2="#ffd700"
+        count={5}
+        edit={true}
+        half={true}
+        onChange={[Function]}
+        size={15}
+        value={0}
+      />
+      <strong>
+         
+         
+      </strong>
+      <p>
+         
+         
+      </p>
+    </div>
+  </div>
+</div>
+`;

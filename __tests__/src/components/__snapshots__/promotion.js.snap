@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Promotion Test -- Testing AddToCart and PickUpInCart of Buttons Testing when Purchasing Channel Code is 0 1`] = `1`;
