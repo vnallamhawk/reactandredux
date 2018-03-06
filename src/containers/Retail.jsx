@@ -27,15 +27,19 @@ class Retail extends Component{
             returns:items[0].ReturnPolicy[0].legalCopy,
             purchasingChannelCode:items[0].purchasingChannelCode };
 
-                debugger;
-        let rating={overallRating: items[0].CustomerReview[0].consolidatedOverallRating,
-            overallReview: Number(items[0].CustomerReview[0].totalReviews),
+        let rating={overallRating: Number(items[0].CustomerReview[0].consolidatedOverallRating),
+            overallReview: items[0].CustomerReview[0].totalReviews,
             proReview: Number(items[0].CustomerReview[0].Pro[0].overallRating),
             proDesc: items[0].CustomerReview[0].Pro[0].review,
             proTitle: items[0].CustomerReview[0].Pro[0].title,
+            proUser : items[0].CustomerReview[0].Pro[0].screenName,
+            proDate : items[0].CustomerReview[0].Pro[0].datePosted,
             conReview: Number(items[0].CustomerReview[0].Con[0].overallRating),
             conDesc: items[0].CustomerReview[0].Con[0].review,
-            conTitle: items[0].CustomerReview[0].Con[0].title};
+            conTitle: items[0].CustomerReview[0].Con[0].title,
+            conUser : items[0].CustomerReview[0].Con[0].screenName,
+            conDate : items[0].CustomerReview[0].Con[0].datePosted
+        };
 
         ProductHighlight =  <ProductHighlights highlights={items[0].ItemDescription[0].features} />;
         Rating = <Ratings {...rating}/>;

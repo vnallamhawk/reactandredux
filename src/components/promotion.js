@@ -50,22 +50,22 @@ const Promotion =(props) => {
             </div>
             </div>
             </div>
-            <div className="row">
-            <div className="col-md-3">
+            <div className="row margintop10">
+            <div className="col-md-6">
             {(purchasingChannelCode==0||purchasingChannelCode==2)&&
-            <button>PICK UP IN STORE   </button>
+            <button className="btnPickUp">PICK UP IN STORE   </button>
             }
             </div>
-            <div className="col-md-3">
+            <div className="col-md-6">
             {(purchasingChannelCode==0||purchasingChannelCode==1)&&
-            <button>ADD TO CART  </button>
+            <button className="btnAddToCart">ADD TO CART  </button>
             }
             </div>
             </div>
-            <div className="row">
+            <div className="row margintop10">
             <div className="col-md-1">
-            returns
-            </div>
+            returns 
+            </div> 
             <div className="col-md-11">
              <div dangerouslySetInnerHTML={{__html: returns}}></div>
             </div>

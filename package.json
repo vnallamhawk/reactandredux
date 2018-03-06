@@ -11,10 +11,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|jpg|png)$": "<rootDir>/empty-module.js",
-      "\\.(s?css)$": "<rootDir>/test/stylesMock.js",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./__mocks__/fileMock.js",
-      "\\.(scss|css)$": "identity-obj-proxy"
+      "\\.(css|jpg|png|scss)$": "<rootDir>/empty-module.js"
     },
     "coveragePathIgnorePatterns": [
       "index.dev.js",

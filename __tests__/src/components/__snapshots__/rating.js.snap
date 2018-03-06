@@ -2,22 +2,20 @@
 
 exports[`Rating Test -- Snapshot capturing snapshot of Rating 1`] = `
 <div>
+  <ReactStars
+    char="★"
+    color1="gray"
+    color2="#ffd700"
+    count={5}
+    edit={false}
+    half={true}
+    onChange={[Function]}
+    size={15}
+    value={0}
+  />
   <div>
-    <ReactStars
-      char="★"
-      color1="gray"
-      color2="#ffd700"
-      count={5}
-      edit={true}
-      half={true}
-      onChange={[Function]}
-      size={15}
-      value={0}
-    />
-    <div>
-       View all 
-       reviews  
-    </div>
+     View all 
+     reviews  
   </div>
   <div
     className="row"
@@ -33,7 +31,7 @@ exports[`Rating Test -- Snapshot capturing snapshot of Rating 1`] = `
         color1="gray"
         color2="#ffd700"
         count={5}
-        edit={true}
+        edit={false}
         half={true}
         onChange={[Function]}
         size={15}
@@ -59,7 +57,7 @@ exports[`Rating Test -- Snapshot capturing snapshot of Rating 1`] = `
         color1="gray"
         color2="#ffd700"
         count={5}
-        edit={true}
+        edit={false}
         half={true}
         onChange={[Function]}
         size={15}

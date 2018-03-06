@@ -23801,15 +23801,19 @@
 	                    returns: items[0].ReturnPolicy[0].legalCopy,
 	                    purchasingChannelCode: items[0].purchasingChannelCode };
 
-	                debugger;
-	                var rating = { overallRating: items[0].CustomerReview[0].consolidatedOverallRating,
-	                    overallReview: Number(items[0].CustomerReview[0].totalReviews),
+	                var rating = { overallRating: Number(items[0].CustomerReview[0].consolidatedOverallRating),
+	                    overallReview: items[0].CustomerReview[0].totalReviews,
 	                    proReview: Number(items[0].CustomerReview[0].Pro[0].overallRating),
 	                    proDesc: items[0].CustomerReview[0].Pro[0].review,
 	                    proTitle: items[0].CustomerReview[0].Pro[0].title,
+	                    proUser: items[0].CustomerReview[0].Pro[0].screenName,
+	                    proDate: items[0].CustomerReview[0].Pro[0].datePosted,
 	                    conReview: Number(items[0].CustomerReview[0].Con[0].overallRating),
 	                    conDesc: items[0].CustomerReview[0].Con[0].review,
-	                    conTitle: items[0].CustomerReview[0].Con[0].title };
+	                    conTitle: items[0].CustomerReview[0].Con[0].title,
+	                    conUser: items[0].CustomerReview[0].Con[0].screenName,
+	                    conDate: items[0].CustomerReview[0].Con[0].datePosted
+	                };
 
 	                ProductHighlight = _react2.default.createElement(_productHighlights2.default, { highlights: items[0].ItemDescription[0].features });
 	                Rating = _react2.default.createElement(_rating2.default, rating);
@@ -25504,7 +25508,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	        value: true
+	    value: true
 	});
 
 	var _react = __webpack_require__(2);
@@ -25518,81 +25522,149 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Reviews = function Reviews(props) {
-	        var overallRating = props.overallRating,
-	            overallReview = props.overallReview,
-	            proReview = props.proReview,
-	            proDesc = props.proDesc,
-	            proTitle = props.proTitle,
-	            conReview = props.conReview,
-	            conDesc = props.conDesc,
-	            conTitle = props.conTitle;
+	    var overallRating = props.overallRating,
+	        overallReview = props.overallReview,
+	        proReview = props.proReview,
+	        proDesc = props.proDesc,
+	        proTitle = props.proTitle,
+	        conReview = props.conReview,
+	        conDesc = props.conDesc,
+	        conTitle = props.conTitle,
+	        proUser = props.proUser,
+	        proDate = props.proDate,
+	        conUser = props.conUser,
+	        conDate = props.conDate;
 
-	        debugger;
-	        console.log(overallRating);
-	        return _react2.default.createElement(
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'ratingContainer' },
+	        _react2.default.createElement(
+	            'div',
+	            { className: 'row paddingTop15' },
+	            _react2.default.createElement(
 	                'div',
-	                null,
-	                _react2.default.createElement(_reactStars2.default, { value: overallRating, edit: false }),
+	                { className: 'col-sm-offset-1 col-md-3 marginTop9' },
+	                _react2.default.createElement(_reactStars2.default, { value: overallRating, edit: false, size: 24 })
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'col-md-5 overallText' },
+	                'overall'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'col-md-3' },
 	                _react2.default.createElement(
-	                        'div',
-	                        null,
-	                        ' View all ',
-	                        overallReview,
-	                        ' reviews  '
+	                    'div',
+	                    { className: 'overallReviews' },
+	                    ' View all ',
+	                    overallReview,
+	                    ' reviews  '
+	                )
+	            )
+	        ),
+	        _react2.default.createElement(
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-offset-1 col-md-5' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'reviewTitle' },
+	                    ' PRO '
 	                ),
 	                _react2.default.createElement(
-	                        'div',
-	                        { className: 'row' },
-	                        _react2.default.createElement(
-	                                'div',
-	                                { className: 'col-md-6' },
-	                                _react2.default.createElement(
-	                                        'h3',
-	                                        null,
-	                                        ' PRO '
-	                                ),
-	                                _react2.default.createElement(_reactStars2.default, { value: proReview, edit: false }),
-	                                _react2.default.createElement(
-	                                        'strong',
-	                                        null,
-	                                        ' ',
-	                                        proTitle,
-	                                        ' '
-	                                ),
-	                                _react2.default.createElement(
-	                                        'p',
-	                                        null,
-	                                        ' ',
-	                                        proDesc,
-	                                        ' '
-	                                )
-	                        ),
-	                        _react2.default.createElement(
-	                                'div',
-	                                { className: 'col-md-6' },
-	                                _react2.default.createElement(
-	                                        'h3',
-	                                        null,
-	                                        ' CON '
-	                                ),
-	                                _react2.default.createElement(_reactStars2.default, { value: conReview, edit: false }),
-	                                _react2.default.createElement(
-	                                        'strong',
-	                                        null,
-	                                        ' ',
-	                                        conTitle,
-	                                        ' '
-	                                ),
-	                                _react2.default.createElement(
-	                                        'p',
-	                                        null,
-	                                        ' ',
-	                                        conDesc,
-	                                        ' '
-	                                )
-	                        )
+	                    'div',
+	                    { className: 'ratingSub' },
+	                    ' most helpful 4-5 star review '
 	                )
-	        );
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'col-md-5' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'reviewTitle' },
+	                    ' CON '
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'ratingSub' },
+	                    ' most helpful 1-2 star review '
+	                )
+	            )
+	        ),
+	        _react2.default.createElement('hr', null),
+	        _react2.default.createElement(
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-offset-1 col-md-5' },
+	                _react2.default.createElement(_reactStars2.default, { value: proReview, edit: false }),
+	                _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    ' ',
+	                    proTitle,
+	                    ' '
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    ' ',
+	                    proDesc,
+	                    ' '
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    ' ',
+	                    _react2.default.createElement(
+	                        'a',
+	                        null,
+	                        proUser
+	                    ),
+	                    ' ',
+	                    proDate,
+	                    ' '
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'col-md-5' },
+	                _react2.default.createElement(_reactStars2.default, { value: conReview, edit: false }),
+	                _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    ' ',
+	                    conTitle,
+	                    ' '
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    ' ',
+	                    conDesc,
+	                    ' '
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    ' ',
+	                    _react2.default.createElement(
+	                        'a',
+	                        null,
+	                        conUser
+	                    ),
+	                    ' ',
+	                    conDate,
+	                    ' '
+	                )
+	            )
+	        )
+	    );
 	};
 
 	exports.default = Reviews;
@@ -26110,29 +26182,29 @@
 	        ),
 	        _react2.default.createElement(
 	            'div',
-	            { className: 'row' },
+	            { className: 'row margintop10' },
 	            _react2.default.createElement(
 	                'div',
-	                { className: 'col-md-3' },
+	                { className: 'col-md-6' },
 	                (purchasingChannelCode == 0 || purchasingChannelCode == 2) && _react2.default.createElement(
 	                    'button',
-	                    null,
+	                    { className: 'btnPickUp' },
 	                    'PICK UP IN STORE   '
 	                )
 	            ),
 	            _react2.default.createElement(
 	                'div',
-	                { className: 'col-md-3' },
+	                { className: 'col-md-6' },
 	                (purchasingChannelCode == 0 || purchasingChannelCode == 1) && _react2.default.createElement(
 	                    'button',
-	                    null,
+	                    { className: 'btnAddToCart' },
 	                    'ADD TO CART  '
 	                )
 	            )
 	        ),
 	        _react2.default.createElement(
 	            'div',
-	            { className: 'row' },
+	            { className: 'row margintop10' },
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'col-md-1' },
@@ -28224,7 +28296,7 @@
 
 
 	// module
-	exports.push([module.id, "body,\n.offerText {\n  font-size: 12px;\n  font-weight: normal;\n}\n\n.title {\n  font-size: 25px;\n  text-align: center;\n}\n\n.amount {\n  font-size: 22px;\n  font-weight: bolder;\n}\n\n.desc {\n  color: #8b0000;\n}\n\n.quantity {\n  border-style: solid;\n  border-color: #D3D3D3;\n  height: 34px;\n}\n\n.rounded {\n  border: none;\n  border-radius: 50%;\n}\n\n.colWhite {\n  color: #ffffff;\n}\n\n.floatRight {\n  float: right;\n}\n\n.selectedQuantity {\n  padding: 2px;\n}\n\n.paddingTop5 {\n  padding-top: 5px;\n}\n\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQzpcXFVzZXJzXFxyYWtlc1xcRGVza3RvcFxcbXlSZXRhaWxcXHB1YmxpY1xcc3R5bGVcXHN0eWxlLnNjc3MiLCJzb3VyY2VzIjpbIkM6L1VzZXJzL3Jha2VzL0Rlc2t0b3AvbXlSZXRhaWwvcHVibGljL3N0eWxlL3N0eWxlLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiYm9keXtcclxuICAgIGZvbnQtc2l6ZToxMnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6bm9ybWFsO1xyXG59XHJcblxyXG4udGl0bGVcclxue2ZvbnQtc2l6ZTogMjVweDtcclxudGV4dC1hbGlnbjogY2VudGVyO31cclxuXHJcbi5hbW91bnR7XHJcbiAgICBmb250LXNpemU6IDIycHg7XHJcbiAgICBmb250LXdlaWdodDogYm9sZGVyO1xyXG59XHJcblxyXG4ub2ZmZXJUZXh0e1xyXG4gICAgQGV4dGVuZCBib2R5O1xyXG59XHJcblxyXG4uZGVzY3tcclxuICAgIGNvbG9yIDogIzhiMDAwMDtcclxufVxyXG5cclxuLnF1YW50aXR5e1xyXG4gICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvciA6ICNEM0QzRDM7XHJcbiAgICBoZWlnaHQ6IDM0cHg7XHJcbn1cclxuXHJcbi5yb3VuZGVke1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG59XHJcblxyXG4uY29sV2hpdGV7XHJcbiAgICBjb2xvcjojZmZmZmZmO1xyXG59XHJcblxyXG4uZmxvYXRSaWdodHtcclxuICAgIGZsb2F0OnJpZ2h0O1xyXG59XHJcblxyXG4uc2VsZWN0ZWRRdWFudGl0eXtcclxucGFkZGluZzogMnB4O1xyXG59XHJcblxyXG4ucGFkZGluZ1RvcDV7XHJcbnBhZGRpbmctdG9wOjVweDtcclxufSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxBQUFBLElBQUksRUFjSixBQWRBLFVBY1UsQ0FkTjtFQUNBLFNBQVMsRUFBQyxJQUFJO0VBQ2QsV0FBVyxFQUFDLE1BQU0sR0FDckI7O0FBRUQsQUFBQSxNQUFNLENBQ047RUFBQyxTQUFTLEVBQUUsSUFBSTtFQUNoQixVQUFVLEVBQUUsTUFBTSxHQUFHOztBQUVyQixBQUFBLE9BQU8sQ0FBQTtFQUNILFNBQVMsRUFBRSxJQUFJO0VBQ2YsV0FBVyxFQUFFLE1BQU0sR0FDdEI7O0FBTUQsQUFBQSxLQUFLLENBQUE7RUFDRCxLQUFLLEVBQUcsT0FBTyxHQUNsQjs7QUFFRCxBQUFBLFNBQVMsQ0FBQTtFQUNMLFlBQVksRUFBRSxLQUFLO0VBQ25CLFlBQVksRUFBRyxPQUFPO0VBQ3RCLE1BQU0sRUFBRSxJQUFJLEdBQ2Y7O0FBRUQsQUFBQSxRQUFRLENBQUE7RUFDSixNQUFNLEVBQUUsSUFBSTtFQUNaLGFBQWEsRUFBRSxHQUFHLEdBQ3JCOztBQUVELEFBQUEsU0FBUyxDQUFBO0VBQ0wsS0FBSyxFQUFDLE9BQU8sR0FDaEI7O0FBRUQsQUFBQSxXQUFXLENBQUE7RUFDUCxLQUFLLEVBQUMsS0FBSyxHQUNkOztBQUVELEFBQUEsaUJBQWlCLENBQUE7RUFDakIsT0FBTyxFQUFFLEdBQUcsR0FDWDs7QUFFRCxBQUFBLFlBQVksQ0FBQTtFQUNaLFdBQVcsRUFBQyxHQUFHLEdBQ2QifQ== */", ""]);
+	exports.push([module.id, "body,\n.offerText {\n  font-size: 12px;\n  font-weight: normal;\n}\n\n.margintop10 {\n  margin-top: 10px;\n}\n\n.title {\n  font-size: 22px;\n  text-align: center;\n}\n\n.amount {\n  font-size: 22px;\n  font-weight: bolder;\n}\n\n.desc {\n  color: #8b0000;\n}\n\n.quantity {\n  margin-top: 10px;\n  border-style: solid;\n  border-color: #D3D3D3;\n  height: 34px;\n}\n\n.rounded {\n  border: none;\n  border-radius: 50%;\n}\n\n.colWhite {\n  color: #ffffff;\n}\n\n.floatRight {\n  float: right;\n}\n\n.selectedQuantity {\n  padding: 2px;\n}\n\n.paddingTop5 {\n  padding-top: 5px;\n}\n\n.carousel .slide img {\n  width: 51% !important;\n  height: 300px !important;\n  background-color: white;\n}\n\n.selected {\n  background-color: white !important;\n}\n\n.overallReviews {\n  font-weight: bolder;\n  float: right;\n}\n\n.marginTop9 {\n  margin-top: -9px;\n}\n\n.overallText {\n  margin-left: -43px;\n  padding-top: 2px;\n  font-weight: bolder;\n}\n\n.ratingContainer {\n  background-color: #F6F4F5;\n}\n\n.paddingTop15 {\n  padding-top: 15px;\n}\n\n.ratingSub {\n  font-size: 12px;\n}\n\nhr {\n  margin-top: 2px !important;\n  margin-bottom: 2px !important;\n  border-top: 2px solid #eee;\n}\n\n.reviewTitle {\n  font-weight: bold;\n}\n\n.btnAddToCart {\n  background-color: black;\n  width: 283px;\n  height: 45px;\n  color: white;\n  font-size: 25px;\n  font-family: 'GriffosFont Regular';\n}\n\n.btnPickUp {\n  background-color: crimson;\n  width: 283px;\n  height: 45px;\n  color: white;\n  font-size: 25px;\n  font-family: 'GriffosFont Regular';\n}\n\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQzpcXFVzZXJzXFxyYWtlc1xcRGVza3RvcFxcbXlSZXRhaWxcXHB1YmxpY1xcc3R5bGVcXHN0eWxlLnNjc3MiLCJzb3VyY2VzIjpbIkM6L1VzZXJzL3Jha2VzL0Rlc2t0b3AvbXlSZXRhaWwvcHVibGljL3N0eWxlL3N0eWxlLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiYm9keXtcclxuICAgIGZvbnQtc2l6ZToxMnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6bm9ybWFsO1xyXG59XHJcblxyXG4ubWFyZ2ludG9wMTB7XHJcbiAgICBtYXJnaW4tdG9wIDoxMHB4O1xyXG59XHJcblxyXG4udGl0bGVcclxue2ZvbnQtc2l6ZTogMjJweDtcclxudGV4dC1hbGlnbjogY2VudGVyO31cclxuXHJcbi5hbW91bnR7XHJcbiAgICBmb250LXNpemU6IDIycHg7XHJcbiAgICBmb250LXdlaWdodDogYm9sZGVyO1xyXG59XHJcblxyXG4ub2ZmZXJUZXh0e1xyXG4gICAgQGV4dGVuZCBib2R5O1xyXG59XHJcblxyXG4uZGVzY3tcclxuICAgIGNvbG9yIDogIzhiMDAwMDtcclxufVxyXG5cclxuLnF1YW50aXR5e1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgICBib3JkZXItY29sb3IgOiAjRDNEM0QzO1xyXG4gICAgaGVpZ2h0OiAzNHB4O1xyXG59XHJcblxyXG4ucm91bmRlZHtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxufVxyXG5cclxuLmNvbFdoaXRle1xyXG4gICAgY29sb3I6I2ZmZmZmZjtcclxufVxyXG5cclxuLmZsb2F0UmlnaHR7XHJcbiAgICBmbG9hdDpyaWdodDtcclxufVxyXG5cclxuLnNlbGVjdGVkUXVhbnRpdHl7XHJcbnBhZGRpbmc6IDJweDtcclxufVxyXG5cclxuLnBhZGRpbmdUb3A1e1xyXG5wYWRkaW5nLXRvcDo1cHg7XHJcbn1cclxuXHJcbi5jYXJvdXNlbCAuc2xpZGUgaW1nIHtcclxuICAgIHdpZHRoOiA1MSUgIWltcG9ydGFudDtcclxuICAgIGhlaWdodDogMzAwcHggIWltcG9ydGFudDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4uc2VsZWN0ZWR7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ub3ZlcmFsbFJldmlld3N7XHJcbiAgICBmb250LXdlaWdodDogYm9sZGVyO1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gXHJcbn1cclxuXHJcbi5tYXJnaW5Ub3A5e1xyXG4gICAgbWFyZ2luLXRvcDotOXB4O1xyXG59XHJcblxyXG4ub3ZlcmFsbFRleHR7XHJcbiAgICBtYXJnaW4tbGVmdDogLTQzcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGRlcjtcclxufVxyXG5cclxuLnJhdGluZ0NvbnRhaW5lcntcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNGNkY0RjU7XHJcbn1cclxuXHJcbi5wYWRkaW5nVG9wMTV7XHJcbiAgICBwYWRkaW5nLXRvcDogMTVweDtcclxufVxyXG5cclxuLnJhdGluZ1N1YntcclxuICAgIGZvbnQtc2l6ZToxMnB4O1xyXG59XHJcblxyXG5ocntcclxuICAgIG1hcmdpbi10b3A6MnB4ICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tYm90dG9tOjJweCAhaW1wb3J0YW50O1xyXG4gICAgYm9yZGVyLXRvcDogMnB4IHNvbGlkICNlZWU7XHJcbn1cclxuXHJcbi5yZXZpZXdUaXRsZXtcclxuICAgIGZvbnQtd2VpZ2h0OmJvbGQ7XHJcbn1cclxuXHJcbkBtaXhpbiBtYXJnaW5Ub3AxMHtcclxuICAgIG1hcmdpbi10b3A6MTBweDtcclxufVxyXG5cclxuQG1peGluIGJ0bntcclxuICAgIHdpZHRoOiAyODNweDtcclxuICAgIGhlaWdodDogNDVweDtcclxuICAgIGNvbG9yIDogd2hpdGU7XHJcbiAgICBmb250LXNpemU6MjVweDtcclxuICAgIGZvbnQtZmFtaWx5OiAnR3JpZmZvc0ZvbnQgUmVndWxhcic7XHJcbn1cclxuXHJcbi5idG5BZGRUb0NhcnR7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIEBpbmNsdWRlIGJ0bjtcclxufVxyXG5cclxuXHJcbi5idG5QaWNrVXB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBjcmltc29uO1xyXG4gICAgQGluY2x1ZGUgYnRuO1xyXG4gICBcclxufSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxBQUFBLElBQUksRUFrQkosQUFsQkEsVUFrQlUsQ0FsQk47RUFDQSxTQUFTLEVBQUMsSUFBSTtFQUNkLFdBQVcsRUFBQyxNQUFNLEdBQ3JCOztBQUVELEFBQUEsWUFBWSxDQUFBO0VBQ1IsVUFBVSxFQUFFLElBQUksR0FDbkI7O0FBRUQsQUFBQSxNQUFNLENBQ047RUFBQyxTQUFTLEVBQUUsSUFBSTtFQUNoQixVQUFVLEVBQUUsTUFBTSxHQUFHOztBQUVyQixBQUFBLE9BQU8sQ0FBQTtFQUNILFNBQVMsRUFBRSxJQUFJO0VBQ2YsV0FBVyxFQUFFLE1BQU0sR0FDdEI7O0FBTUQsQUFBQSxLQUFLLENBQUE7RUFDRCxLQUFLLEVBQUcsT0FBTyxHQUNsQjs7QUFFRCxBQUFBLFNBQVMsQ0FBQTtFQUNMLFVBQVUsRUFBRSxJQUFJO0VBQ2hCLFlBQVksRUFBRSxLQUFLO0VBQ25CLFlBQVksRUFBRyxPQUFPO0VBQ3RCLE1BQU0sRUFBRSxJQUFJLEdBQ2Y7O0FBRUQsQUFBQSxRQUFRLENBQUE7RUFDSixNQUFNLEVBQUUsSUFBSTtFQUNaLGFBQWEsRUFBRSxHQUFHLEdBQ3JCOztBQUVELEFBQUEsU0FBUyxDQUFBO0VBQ0wsS0FBSyxFQUFDLE9BQU8sR0FDaEI7O0FBRUQsQUFBQSxXQUFXLENBQUE7RUFDUCxLQUFLLEVBQUMsS0FBSyxHQUNkOztBQUVELEFBQUEsaUJBQWlCLENBQUE7RUFDakIsT0FBTyxFQUFFLEdBQUcsR0FDWDs7QUFFRCxBQUFBLFlBQVksQ0FBQTtFQUNaLFdBQVcsRUFBQyxHQUFHLEdBQ2Q7O0FBRUQsQUFBaUIsU0FBUixDQUFDLE1BQU0sQ0FBQyxHQUFHLENBQUM7RUFDakIsS0FBSyxFQUFFLGNBQWM7RUFDckIsTUFBTSxFQUFFLGdCQUFnQjtFQUN4QixnQkFBZ0IsRUFBRSxLQUFLLEdBQzFCOztBQUVELEFBQUEsU0FBUyxDQUFBO0VBQ0wsZ0JBQWdCLEVBQUUsZ0JBQWdCLEdBQ3JDOztBQUVELEFBQUEsZUFBZSxDQUFBO0VBQ1gsV0FBVyxFQUFFLE1BQU07RUFDbkIsS0FBSyxFQUFFLEtBQUssR0FFZjs7QUFFRCxBQUFBLFdBQVcsQ0FBQTtFQUNQLFVBQVUsRUFBQyxJQUFJLEdBQ2xCOztBQUVELEFBQUEsWUFBWSxDQUFBO0VBQ1IsV0FBVyxFQUFFLEtBQUs7RUFDbEIsV0FBVyxFQUFFLEdBQUc7RUFDaEIsV0FBVyxFQUFFLE1BQU0sR0FDdEI7O0FBRUQsQUFBQSxnQkFBZ0IsQ0FBQTtFQUNaLGdCQUFnQixFQUFFLE9BQU8sR0FDNUI7O0FBRUQsQUFBQSxhQUFhLENBQUE7RUFDVCxXQUFXLEVBQUUsSUFBSSxHQUNwQjs7QUFFRCxBQUFBLFVBQVUsQ0FBQTtFQUNOLFNBQVMsRUFBQyxJQUFJLEdBQ2pCOztBQUVELEFBQUEsRUFBRSxDQUFBO0VBQ0UsVUFBVSxFQUFDLGNBQWM7RUFDekIsYUFBYSxFQUFDLGNBQWM7RUFDNUIsVUFBVSxFQUFFLGNBQWMsR0FDN0I7O0FBRUQsQUFBQSxZQUFZLENBQUE7RUFDUixXQUFXLEVBQUMsSUFBSSxHQUNuQjs7QUFjRCxBQUFBLGFBQWEsQ0FBQTtFQUNULGdCQUFnQixFQUFFLEtBQUs7RUFSdkIsS0FBSyxFQUFFLEtBQUs7RUFDWixNQUFNLEVBQUUsSUFBSTtFQUNaLEtBQUssRUFBRyxLQUFLO0VBQ2IsU0FBUyxFQUFDLElBQUk7RUFDZCxXQUFXLEVBQUUscUJBQXFCLEdBTXJDOztBQUdELEFBQUEsVUFBVSxDQUFBO0VBQ04sZ0JBQWdCLEVBQUUsT0FBTztFQWR6QixLQUFLLEVBQUUsS0FBSztFQUNaLE1BQU0sRUFBRSxJQUFJO0VBQ1osS0FBSyxFQUFHLEtBQUs7RUFDYixTQUFTLEVBQUMsSUFBSTtFQUNkLFdBQVcsRUFBRSxxQkFBcUIsR0FhckMifQ== */", ""]);
 
 	// exports
 

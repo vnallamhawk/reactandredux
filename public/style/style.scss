@@ -3,8 +3,12 @@ body{
     font-weight:normal;
 }
 
+.margintop10{
+    margin-top :10px;
+}
+
 .title
-{font-size: 25px;
+{font-size: 22px;
 text-align: center;}
 
 .amount{
@@ -21,6 +25,7 @@ text-align: center;}
 }
 
 .quantity{
+    margin-top: 10px;
     border-style: solid;
     border-color : #D3D3D3;
     height: 34px;
@@ -45,4 +50,76 @@ padding: 2px;
 
 .paddingTop5{
 padding-top:5px;
+}
+
+.carousel .slide img {
+    width: 51% !important;
+    height: 300px !important;
+    background-color: white;
+}
+
+.selected{
+    background-color: white !important;
+}
+
+.overallReviews{
+    font-weight: bolder;
+    float: right;
+ 
+}
+
+.marginTop9{
+    margin-top:-9px;
+}
+
+.overallText{
+    margin-left: -43px;
+    padding-top: 2px;
+    font-weight: bolder;
+}
+
+.ratingContainer{
+    background-color: #F6F4F5;
+}
+
+.paddingTop15{
+    padding-top: 15px;
+}
+
+.ratingSub{
+    font-size:12px;
+}
+
+hr{
+    margin-top:2px !important;
+    margin-bottom:2px !important;
+    border-top: 2px solid #eee;
+}
+
+.reviewTitle{
+    font-weight:bold;
+}
+
+@mixin marginTop10{
+    margin-top:10px;
+}
+
+@mixin btn{
+    width: 283px;
+    height: 45px;
+    color : white;
+    font-size:25px;
+    font-family: 'GriffosFont Regular';
+}
+
+.btnAddToCart{
+    background-color: black;
+    @include btn;
+}
+
+
+.btnPickUp{
+    background-color: crimson;
+    @include btn;
+   
 }
