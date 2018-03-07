@@ -2,6 +2,7 @@ import React from 'react';
 
 const ProductHighlights = props =>{
    let highlights = props.highlights;
+   console.log(highlights);
    return (
        <div>
        <h2> Product highlights</h2>

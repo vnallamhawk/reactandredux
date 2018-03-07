@@ -123,3 +123,13 @@ hr{
     @include btn;
    
 }
+
+.nav-pills>li {
+    width: 33%;
+    background-color: #F3F3F3;
+    text-align: center;
+}
+
+.anchorTag{
+    color:black;
+}

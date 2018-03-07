@@ -22,7 +22,7 @@ const Promotion =(props) => {
             <div>
             <div className="amount">
                         {amount}
-                        <sub className="offerText">online price</sub>
+                        <span className="offerText">online price</span>
                         </div> 
                         </div>
                         <hr/>
@@ -68,6 +68,15 @@ const Promotion =(props) => {
             </div> 
             <div className="col-md-11">
              <div dangerouslySetInnerHTML={{__html: returns}}></div>
+            </div>
+            </div>
+            <div className="row">
+            <div className="col-md-11 offset-md-1">
+            <ul className="nav nav-pills">
+                <li><a className="anchorTag" href="#">ADD TO REGISTRY</a></li>
+                <li><a className="anchorTag" href="#">ADD TO LIST</a></li>
+                <li><a className="anchorTag" href="#">SHARE</a></li>
+            </ul>
             </div>
             </div>
             </div>

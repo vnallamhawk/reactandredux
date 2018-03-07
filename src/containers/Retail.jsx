@@ -6,7 +6,7 @@ import Ratings from '../components/rating';
 import Price from '../components/promotion';
 import Carousel from '../components/carousel';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-class Retail extends Component{
+export class Retail extends Component{
     constructor(){
         super();
         // this.state = {
@@ -21,7 +21,6 @@ class Retail extends Component{
         const {items} = this.props;
         if(undefined!=items && items.length>0)
         {
-            console.log(items);
         let props = {amount:items[0].Offers[0].OfferPrice[0].formattedPriceValue,
             promotion:items[0].Promotions,
             returns:items[0].ReturnPolicy[0].legalCopy,
@@ -47,7 +46,6 @@ class Retail extends Component{
         carousel = <Carousel images={items[0].Images[0].AlternateImages} title={items[0].title}/>;
         }
 
-        //console.log(this.props.items[0].ItemDescription[0].features)
         return(     
             <div>          
             <div className='container-fluid'>
@@ -57,7 +55,7 @@ class Retail extends Component{
                 {Rating}
             </div>
 
-            <div className='col-md-6'>
+            <div className='col-md-6'>  
             {price}
                  {ProductHighlight}
             </div>
@@ -80,7 +78,7 @@ Retail.defaultProps = {
 
 
 
-const mapDispatchToProps = (dispatch) =>{
+export const mapDispatchToProps = (dispatch) =>{
     return {
         fetchItems: () => {
             dispatch(fetchItems());
@@ -88,7 +86,7 @@ const mapDispatchToProps = (dispatch) =>{
     };
 };
 
-const mapStateToProps = (state) =>{
+export const mapStateToProps = (state) =>{
     return {
         items : state.items
     };

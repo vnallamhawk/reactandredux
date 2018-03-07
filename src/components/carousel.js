@@ -4,7 +4,6 @@ import 'style!css!react-responsive-carousel/lib/styles/carousel.css';
 import '../../public/style/style.scss';
 
 const Image =(props)=> {
-    console.log(props);
     let title = props.title;
     let images = props.images;
     return(
