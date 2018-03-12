@@ -1,17 +1,42 @@
-import React from 'react';
+import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 
-const Promotion =(props) => {
-    //console.log(props);
-    let amount = props.amount;
-    let returns = props.returns;
-    let promotion = props.promotion;
-    let purchasingChannelCode = props.purchasingChannelCode;
+export default class Promotion extends Component {
+    constructor(){
+        super();
+        this.state= {
+            quantity : 1
+        };
+    }
+
+    handler=(e) =>{
+        let quantity, operation;
+
+        if(e.target.id==="btnPlus")
+        {
+            quantity = this.state.quantity;
+            quantity++;
+            this.setState({quantity});
+        }
+        if(e.target.id==="btnMinus"&& this.state.quantity>=0)
+        {
+            quantity = this.state.quantity;
+            if(quantity>1)
+            quantity--;
+            this.setState({quantity});
+        }
+    }
+    
+
+    render(){
+    let amount = this.props.amount;
+    let returns = this.props.returns;
+    let promotion = this.props.promotion;
+    let purchasingChannelCode = this.props.purchasingChannelCode;
     let promotionDescription=[]; 
     let i=0;
     if(undefined!=promotion && promotion!=""){
     while(i<promotion.length){
-        console.log("test");
         let j=0;
         promotionDescription.push(promotion[i].Description[j].shortDescription);
         i++;
@@ -38,12 +63,10 @@ const Promotion =(props) => {
             <div className="paddingTop5"> 
             <span> quantity</span>
             <span className="floatRight">
-            <button className="button rounded">
-            <span className="colWhite glyphicon glyphicon-minus"></span>
+            <button id="btnMinus" className="button rounded colWhite glyphicon glyphicon-minus" onClick={this.handler}>
             </button>
-            <span className="selectedQuantity"> 1 </span>
-            <button className="button rounded">
-            <span className="colWhite glyphicon glyphicon-plus"></span>
+            <span className="selectedQuantity"> {this.state.quantity} </span>
+            <button id="btnPlus" className="colWhite glyphicon glyphicon-plus button rounded" onClick={this.handler}>
             </button>
             </span>
             </div>
@@ -81,6 +104,7 @@ const Promotion =(props) => {
             </div>
             </div>
     );
+}
 };
 
 Promotion.defaultProps = {
@@ -94,5 +118,3 @@ Promotion.defaultProps = {
     purchasingChannelCode: React.PropTypes.string,
     amount: React.PropTypes.string
   };
-
-export default Promotion;
