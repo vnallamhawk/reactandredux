@@ -21,7 +21,6 @@ describe('Testing of features rendering',()=>{
         let highlights=["<strong>Wattage Output:</strong> 1100 Watts", "<strong>Number of Speeds:</strong> 3 "]
         container = shallow(<ProductHighlights highlights = {highlights}/>)
         result = container.find('.features').length;
-        console.log(result);
         expect(result).toEqual(2);
     })
 })
