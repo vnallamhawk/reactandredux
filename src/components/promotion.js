@@ -9,7 +9,7 @@ export default class Promotion extends Component {
         };
     }
 
-    handler=(e) =>{
+    handler=(e)=>{
         let quantity, operation;
 
         if(e.target.id==="btnPlus")
@@ -74,12 +74,12 @@ export default class Promotion extends Component {
             </div>
             </div>
             <div className="row margintop10">
-            <div className="col-md-6">
+            <div className="col-md-6 col-xs-6">
             {(purchasingChannelCode==0||purchasingChannelCode==2)&&
             <button className="btnPickUp">PICK UP IN STORE   </button>
             }
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-xs-6">
             {(purchasingChannelCode==0||purchasingChannelCode==1)&&
             <button className="btnAddToCart">ADD TO CART  </button>
             }
@@ -94,12 +94,13 @@ export default class Promotion extends Component {
             </div>
             </div>
             <div className="row">
-            <div className="col-md-11 offset-md-1">
-            <ul className="nav nav-pills">
-                <li><a className="anchorTag" href="#">ADD TO REGISTRY</a></li>
-                <li><a className="anchorTag" href="#">ADD TO LIST</a></li>
-                <li><a className="anchorTag" href="#">SHARE</a></li>
-            </ul>
+            <div className="col-md-12 col-xs-12">
+                <div className="col-md-4 col-xs-4 navMenu">
+                <div className="col-md-12 navBgClr"><a className="anchorTag" href="#">ADD TO REGISTRY</a></div></div>
+                <div className="col-md-4 col-xs-4 navMenu">
+                <div className="col-md-12 navBgClr marginLeft4"><a className="anchorTag" href="#">ADD TO LIST</a></div></div>
+                <div className="col-md-4 col-xs-4 navMenu">
+                <div className="col-md-12 navBgClr marginLeft4"><a className="anchorTag" href="#">SHARE</a></div></div>
             </div>
             </div>
             </div>

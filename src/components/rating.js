@@ -20,24 +20,24 @@ dateFormatter(proDate);
             </div>
             </div>   
          <div className='row'> 
-        <div className='col-sm-offset-1 col-md-5'>
+        <div className='col-sm-offset-1 col-md-5 col-sm-5 col-xs-5'>
         <span className="reviewTitle"> PRO </span>
         <div className="ratingSub"> most helpful 4-5 star review </div>
         </div>
-        <div className='col-md-5'>
+        <div className='col-md-5 col-sm-5 col-xs-5'>
         <span className="reviewTitle"> CON </span>
         <div className="ratingSub"> most helpful 1-2 star review </div>
         </div>
         </div>
         <hr/>
         <div className='row'>
-        <div className='col-sm-offset-1 col-md-5'>
+        <div className='col-sm-offset-1 col-md-5 col-sm-5 col-xs-5'>
         <Rating value={proReview} edit={false}/>
         <strong> {proTitle} </strong>
         <p> {proDesc} </p>
         <p> <a>{proUser}</a> {dateFormatter(proDate)} </p>
         </div>
-        <div className='col-md-5'>
+        <div className='col-md-5 col-sm-5 col-xs-5'>
         <Rating value={conReview} edit={false}/>
         <strong> {conTitle} </strong>
         <p> {conDesc} </p>
